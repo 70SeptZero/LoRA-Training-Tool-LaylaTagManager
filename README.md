@@ -34,12 +34,13 @@ __简体中文__ | [English](./README/README_EN.md)
 
 ## 使用方法
 
-1、左上角文件 -> 打开文件夹，选图片所在的文件夹（不搜子文件夹）。
-2、左边选择图片，中间展示这张图片的Tag。
-3、双击Tag进行编辑，也可以使用上下键选择标签，选中后按Enter编辑，左右键调顺序。
-4、中间上方工具栏包括：添加Tag(Ctrl+E)、删除Tag(Delete)、撤销(Ctrl+Z)、搜索(Ctrl+F)
-5、右边批量改整个数据集：给所有图片添加Tag、删除Tag、替换Tag、查询包含Tag的图片
-6、Ctrl+S 保存。
+1. 左上角文件 -> 打开文件夹，选图片所在的文件夹（不搜子文件夹）。
+2. 左边选择图片，中间展示这张图片的Tag。
+3. 双击Tag进行编辑，也可以使用上下键选择标签，选中后按Enter编辑，左右键调顺序。
+4. 中间上方工具栏包括：添加Tag(Ctrl+E)、删除Tag(Delete)、撤销(Ctrl+Z)、搜索(Ctrl+F)
+5. 右边批量改整个数据集：给所有图片添加Tag、删除Tag、替换Tag、查询包含Tag的图片
+6. Ctrl+S 保存。
+
 ![使用演示](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/2.gif)
 
 
@@ -51,7 +52,8 @@ __简体中文__ | [English](./README/README_EN.md)
 
 ### 自定义翻译与标签
 
-感觉翻译不行或者缺少翻译就双击直接改。改完以后这个标签都会显示你改的翻译，自动补全时这个Tag也会排在前面。你只需要编辑过翻译，就会把这个tag标记成自定义tag了
+感觉翻译不行或者缺少翻译就双击直接改。改完以后这个标签都会显示你改的翻译，自动补全时这个Tag也会排在前面。你只需要编辑过翻译，就会把这个tag标记成自定义tag了。  
+
 ![自定义翻译](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/3.gif)
 
 ### 左边：图片和文件列表
@@ -76,7 +78,8 @@ __简体中文__ | [English](./README/README_EN.md)
 - **查标签**：只看包含选中标签的图片，点旁边的“退出查询”恢复显示所有图片
 
 ### 设置
-设置可以修改：字号、顶部工具栏显示方式、快捷键
+设置可以修改：字号、顶部工具栏显示方式、快捷键  
+
 ![设置](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/img/2.png)
 
 ## 运行方法
