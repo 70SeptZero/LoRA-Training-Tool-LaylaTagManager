@@ -1,0 +1,22 @@
+{
+  "last_folder": "D:/Application/Stable Diffusion/lora-train/Layla/Layla_train-3/10_other",
+  "font_size": 10,
+  "shortcuts": {
+    "add_tag": "Ctrl+E",
+    "delete_tag": "Delete",
+    "undo": "Ctrl+Z",
+    "find_tag": "Ctrl+F",
+    "save": "Ctrl+S"
+  },
+  "center_column_percentages": [
+    0.4652631578947368,
+    0.5347368421052632
+  ],
+  "right_column_percentages": [
+    0.43037974683544306,
+    0.42616033755274263,
+    0.14345991561181434
+  ],
+  "toolbar_style": "icons",
+  "window_geometry": "01d9d0cb000300000000009d0000006700000614000003a40000009d0000008500000614000003a4000000000000000006ab0000009d0000008500000614000003a4"
+}
