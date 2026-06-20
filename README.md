@@ -11,8 +11,10 @@ __简体中文__ | [English](./README/README_EN.md)
 压缩包只有 29MB（7z），解压完 65MB，自带 Python 环境，不用折腾，打开就能用。
 
 ## 一点背景
-起因是在用BooruDatasetTagManager的时候，感觉图片单独一个页面不太方便，于是就自己（ds）写了个把图片界面给集成到主界面的效果（顺手给其他功能也简化了一下）
-然后把danbooru.csv和e621.csv和翻译给整合成了一个tags.csv，里面有21万条tag数据，差不多够用了
+起因是在用BooruDatasetTagManager的时候，感觉图片单独一个页面不太方便，于是就自己（ds）写了个把图片界面给集成到主界面的效果（顺手给其他功能也简化了一下）  
+
+然后把danbooru.csv和e621.csv和翻译给整合成了一个tags.csv，里面有21万条tag数据，差不多够用了  
+
 其实这个软件就是我让ds给我写来自己用的，因为我想要一个看图功能也集成进去的TagManager，所以只有中文。折腾了半天改bug优化性能，目前感觉挺好用的。
 
 ## 这玩意儿能干啥
@@ -91,12 +93,16 @@ __简体中文__ | [English](./README/README_EN.md)
 不用装 Python，不用配环境。压缩包 29MB（7z）或 35MB（zip），解压后 65MB。
 
 Tags是标签文件，自定义标签放在`custom_tags.csv`中的
+
 `config.json`是你的一些配置文件，比如界面布局等
 
 ### 从源码运行
 代码环境采用了uv环境，所有源码都在LaylaTagManager文件夹下，运行 `main.py` 文件即可
+
 使用了：pyside6-essentials和pillow
+
 已经写在`pyproject.toml`中了
+
 最后，请确保您已经安装了 __uv__ 环境
 ```bash
 git clone https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager.git
