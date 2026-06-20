@@ -3,10 +3,10 @@
 block_cipher = None
 
 a = Analysis(
-    ['main.py'],
+    ['LaylaTagManager/main.py'],
     pathex=[],
     binaries=[],
-    datas=[('icons', 'icons')],
+    datas=[('LaylaTagManager/icons', 'icons')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -40,7 +40,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='icons/logo.ico',
+    icon='LaylaTagManager/icons/logo.ico',
 )
 
 coll = COLLECT(

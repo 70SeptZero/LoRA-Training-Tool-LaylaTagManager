@@ -524,7 +524,7 @@ class MainWindow(QMainWindow):
             event.accept()
         self.save_config()
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
     window = MainWindow()
     geom = window.config.get("window_geometry")
@@ -532,3 +532,6 @@ if __name__ == "__main__":
         window.restoreGeometry(QByteArray.fromHex(geom.encode()))
     window.show()
     sys.exit(app.exec())
+
+if __name__ == "__main__":
+    main()

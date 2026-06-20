@@ -2,4 +2,7 @@
 name = "laylatagmanager"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pillow>=10.0.0",
+    "pyside6-essentials>=6.6.0",
+]
