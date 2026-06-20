@@ -149,7 +149,6 @@ class CenterPanel(QWidget):
                 matched.append(tag)
                 if len(matched) >= MAX_COMPLETION_ITEMS:
                     break
-        # 创建新的小模型，并保持翻译回调
         new_model = TagListModel(matched, self.get_translation_callback)
         self.completer.setModel(new_model)
 
@@ -282,8 +281,6 @@ class CenterPanel(QWidget):
             return
 
         tag = line_edit.text().strip()
-        # ... 后续插入逻辑保持不变
-
         # 获取用户选择的位置策略
         pos_str = pos_combo.currentText()
 

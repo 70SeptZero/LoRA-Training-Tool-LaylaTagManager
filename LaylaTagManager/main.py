@@ -94,7 +94,7 @@ class MainWindow(QMainWindow):
         open_action.triggered.connect(self.open_folder)
         file_menu.addAction(open_action)
 
-        self.save_action = QAction("保存 (Ctrl+S)", self)
+        self.save_action = QAction("保存", self)
         self.save_action.setShortcut(QKeySequence.StandardKey.Save)
         self.save_action.triggered.connect(self.save_all)
         file_menu.addAction(self.save_action)
@@ -320,7 +320,7 @@ class MainWindow(QMainWindow):
         self.apply_percentage_to_table(self.center_panel.table, self.center_percentages)
         self.apply_percentage_to_table(self.right_panel.table, self.right_percentages)
 
-    # ---------- 其他功能（不变） ----------
+    # ---------- 其他功能 ----------
     def _apply_shortcuts(self, shortcuts):
         action_map = {
             "add_tag": self.center_panel.add_action,
