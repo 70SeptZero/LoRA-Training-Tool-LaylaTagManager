@@ -40,7 +40,7 @@ Three-column layout, drag to adjust widths freely.
 5. The right panel is for batch editing the entire dataset.
 6. Ctrl+S to save.
 
-![Demo](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/2.png)
+![Demo](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/2.gif)
 
 ## Main Features
 
@@ -49,11 +49,11 @@ Type to autocomplete tags, use Up/Down to select and Enter to confirm. The data 
 
 ### Custom Translations and Tags
 If a translation is inaccurate or missing, just double-click to edit it. After editing, that tag will show your custom translation and appear higher in autocomplete results. Once you've edited a translation, the tag is marked as a custom tag.
-![Custom Tags](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/3.png)
+![Custom Tags](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/3.gif)
 
 ### Left: Image and File List
 Large image on top, thumbnail list at the bottom, with a draggable divider in between: pull it all the way down to show only the large image, or all the way up to show only the list.
-![Demo](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/1.png)
+![Demo](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/1.gif)
 
 ### Middle: Current Image Tags
 - Double-click a tag to edit, or select and press Enter

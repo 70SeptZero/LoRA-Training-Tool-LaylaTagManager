@@ -40,7 +40,7 @@ __简体中文__ | [English](./README/README_EN.md)
 4、中间上方工具栏包括：添加Tag(Ctrl+E)、删除Tag(Delete)、撤销(Ctrl+Z)、搜索(Ctrl+F)
 5、右边批量改整个数据集：给所有图片添加Tag、删除Tag、替换Tag、查询包含Tag的图片
 6、Ctrl+S 保存。
-![使用演示](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/2.png)
+![使用演示](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/2.gif)
 
 
 ## 主要功能
@@ -52,12 +52,12 @@ __简体中文__ | [English](./README/README_EN.md)
 ### 自定义翻译与标签
 
 感觉翻译不行或者缺少翻译就双击直接改。改完以后这个标签都会显示你改的翻译，自动补全时这个Tag也会排在前面。你只需要编辑过翻译，就会把这个tag标记成自定义tag了
-![自定义翻译](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/3.png)
+![自定义翻译](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/3.gif)
 
 ### 左边：图片和文件列表
 
 上边大图，下边缩略图列表，中间分割条可以拉，拉到底只留大图，拉到顶部就只留列表。
-![使用演示](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/1.png)
+![使用演示](https://github.com/70SeptZero/LoRA-Training-Tool-LaylaTagManager/blob/master/README/gif/1.gif)
 
 ### 中间：当前图片的标签
 
