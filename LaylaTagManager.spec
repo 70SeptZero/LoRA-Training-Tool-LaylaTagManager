@@ -4,7 +4,7 @@ block_cipher = None
 
 a = Analysis(
     ['LaylaTagManager/main.py'],
-    pathex=[],
+    pathex=['.'],
     binaries=[],
     datas=[('LaylaTagManager/icons', 'icons')],
     hiddenimports=[],

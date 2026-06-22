@@ -1,15 +1,17 @@
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QKeySequence
+from PySide6.QtGui import QKeySequence, QIcon
 from PySide6.QtWidgets import (
     QDialog, QTabWidget, QWidget, QVBoxLayout, QSpinBox, QLabel,
     QTableWidget, QTableWidgetItem, QDialogButtonBox, QKeySequenceEdit, QComboBox
 )
 
+from utils import get_resource_path
 
 class SettingsDialog(QDialog):
     def __init__(self, config, parent=None):
         super().__init__(parent)
         self.setWindowTitle("设置")
+        self.setWindowIcon(QIcon(get_resource_path("icons/logo.png")))
         self.config = config.copy()
         self._init_ui()
 
