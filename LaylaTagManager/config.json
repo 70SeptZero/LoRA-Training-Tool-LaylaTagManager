@@ -1,5 +1,5 @@
 {
-  "last_folder": "D:/Application/Stable Diffusion/lora-train/Layla/Layla_train-3/10_other",
+  "last_folder": "D:/Application/Stable Diffusion/lora-train/Seele/seele_train/form",
   "font_size": 10,
   "shortcuts": {
     "add_tag": "Ctrl+E",
@@ -9,14 +9,15 @@
     "save": "Ctrl+S"
   },
   "center_column_percentages": [
-    0.44842105263157894,
-    0.5515789473684211
+    0.2777777777777778,
+    0.7222222222222222
   ],
   "right_column_percentages": [
-    0.41350210970464135,
-    0.4092827004219409,
-    0.17721518987341772
+    0.1853546910755149,
+    0.26773455377574373,
+    0.5469107551487414
   ],
+  "splitter_state": "000000ff000000010000000300000190000001f4000001f401ffffffff010000000100",
   "toolbar_style": "icons",
-  "window_geometry": "01d9d0cb000300000000009d0000006700000614000003a40000009d0000008500000614000003a4000000000000000006ab0000009d0000008500000614000003a4"
+  "window_geometry": "01d9d0cb00030000000000ac0000008100000623000003be000000ac0000009f00000623000003be000000000000000006ab000000ac0000009f00000623000003be"
 }

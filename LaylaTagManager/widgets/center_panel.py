@@ -304,15 +304,22 @@ class CenterPanel(QWidget):
     def delete_tags(self):
         if not self.current_image:
             return
-        rows = set()
-        for item in self.table.selectedItems():
-            rows.add(item.row())
+        rows = sorted(set(item.row() for item in self.table.selectedItems()))
         if not rows:
             return
+        # 记录第一个被删行的位置
+        first_deleted = rows[0]
         self._push_undo()
         new_tags = [t for i, t in enumerate(self.current_image.tags) if i not in rows]
         self.current_image.tags = new_tags
         self.refresh_table()
+        # 恢复选择：定位到 first_deleted 之后的行，若超出范围则选最后一行
+        if new_tags:
+            target_row = first_deleted
+            if target_row >= len(new_tags):
+                target_row = len(new_tags) - 1
+            self.table.selectRow(target_row)
+
         self.tags_modified.emit(self.current_file)
 
     def move_tag_up(self):

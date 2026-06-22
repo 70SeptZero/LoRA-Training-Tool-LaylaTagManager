@@ -21,7 +21,7 @@ class LeftPanel(QWidget):
 
     def _init_ui(self):
         main_layout = QVBoxLayout(self)
-        splitter = QSplitter(Qt.Orientation.Vertical)
+        self.splitter = QSplitter(Qt.Orientation.Vertical)  # 保存为实例变量
 
         # 上半部分：当前图片预览
         self.preview_label = QLabel("当前图片预览")
@@ -32,7 +32,7 @@ class LeftPanel(QWidget):
             QSizePolicy.Policy.Ignored,
             QSizePolicy.Policy.Ignored
         )
-        splitter.addWidget(self.preview_label)
+        self.splitter.addWidget(self.preview_label)
 
         # 下半部分：文件列表 + 滑块
         bottom_widget = QWidget()
@@ -55,8 +55,26 @@ class LeftPanel(QWidget):
         slider_row.addWidget(self.count_label)
         bottom_layout.addLayout(slider_row)
 
-        splitter.addWidget(bottom_widget)
-        main_layout.addWidget(splitter)
+        self.splitter.addWidget(bottom_widget)
+        main_layout.addWidget(self.splitter)
+
+        # 分隔条移动时自动更新预览图
+        self.splitter.splitterMoved.connect(self._update_preview)
+
+    def _update_preview(self):
+        """根据 preview_label 当前大小重新缩放并显示预览图"""
+        if self.current_file and self.current_file in self.images:
+            img = self.images[self.current_file]
+            pix = QPixmap(img.path)
+            if not pix.isNull():
+                scaled_pix = pix.scaled(
+                    self.preview_label.size(),
+                    Qt.AspectRatioMode.KeepAspectRatio,
+                    Qt.TransformationMode.SmoothTransformation
+                )
+                self.preview_label.setPixmap(scaled_pix)
+            else:
+                self.preview_label.setText("无法加载图片")
 
     def load_images(self, images_dict):
         self.images = images_dict
@@ -94,17 +112,8 @@ class LeftPanel(QWidget):
             return
         fname = current.data(Qt.ItemDataRole.UserRole)
         self.current_file = fname
-        # 显示预览大图
-        img = self.images[fname]
-        pix = QPixmap(img.path)
-        if not pix.isNull():
-            scaled_pix = pix.scaled(self.preview_label.size(),
-                                    Qt.AspectRatioMode.KeepAspectRatio,
-                                    Qt.TransformationMode.SmoothTransformation)
-            self.preview_label.setPixmap(scaled_pix)
-        else:
-            self.preview_label.setText("无法加载图片")
-        # 发射信号，传递文件名
+        # 先显示预览图，_update_preview 会负责缩放
+        self._update_preview()
         self.image_selected.emit(fname)
 
     def on_slider_changed(self, value):
@@ -133,11 +142,4 @@ class LeftPanel(QWidget):
     def resizeEvent(self, event):
         """窗口大小改变时更新预览图"""
         super().resizeEvent(event)
-        if self.current_file and self.current_file in self.images:
-            img = self.images[self.current_file]
-            pix = QPixmap(img.path)
-            if not pix.isNull():
-                scaled_pix = pix.scaled(self.preview_label.size(),
-                                        Qt.AspectRatioMode.KeepAspectRatio,
-                                        Qt.TransformationMode.SmoothTransformation)
-                self.preview_label.setPixmap(scaled_pix)
+        self._update_preview()

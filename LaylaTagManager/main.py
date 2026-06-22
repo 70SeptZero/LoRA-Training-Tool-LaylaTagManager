@@ -80,6 +80,7 @@ class MainWindow(QMainWindow):
             }),
             "center_column_percentages": self.center_percentages,
             "right_column_percentages": self.right_percentages,
+            "splitter_state": self.splitter.saveState().toHex().data().decode(),
             "toolbar_style": self.config.get("toolbar_style", "icons"),
             "window_geometry": self.saveGeometry().toHex().data().decode()
         }
@@ -118,7 +119,6 @@ class MainWindow(QMainWindow):
         self.splitter.addWidget(self.left_panel)
         self.splitter.addWidget(self.center_panel)
         self.splitter.addWidget(self.right_panel)
-        self.splitter.setSizes([400, 500, 500])
         self.setCentralWidget(self.splitter)
 
         self.right_panel.setup_completer(self.center_panel.completer,
@@ -126,6 +126,14 @@ class MainWindow(QMainWindow):
 
         # 监听分割条移动，重新分配列宽
         self.splitter.splitterMoved.connect(self.on_splitter_moved)
+
+        # 恢复上次的分隔条状态（比例+隐藏状态等）
+        splitter_state = self.config.get("splitter_state")
+        if splitter_state:
+            state = QByteArray.fromHex(splitter_state.encode())
+            QTimer.singleShot(0, lambda: self.splitter.restoreState(state))
+        else:
+            self.splitter.setSizes([400, 500, 500])  # 仅首次运行时的默认值
 
         # 监听列宽拖拽（用户手动拖拽表头分割线）
         self.center_panel.table.horizontalHeader().sectionResized.connect(
@@ -409,7 +417,9 @@ class MainWindow(QMainWindow):
 
     def on_image_selected(self, filename):
         self.current_file = filename
-        img = self.images[filename]
+        img = self.images.get(filename)
+        if img is None:
+            return
         self.center_panel.set_current_image(filename, img)
 
     def on_current_tags_modified(self, filename):
